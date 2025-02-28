@@ -26,7 +26,7 @@
 
         HandsDownGold {
             bindings = <
-   &kp J &kp G &kp M &kp P &kp V               &kp MINUS &kp DOT &kp COMMA &kp SEMI &kp SQT
+   &kp J &kp G &kp M &kp P &kp V               &kp SEMI &kp DOT &kp COMMA &kp MINUS &kp SQT
    &kp R &kp S &kp N &kp D &kp B               &kp Z &kp A &kp E &kp I &kp H
    &kp X &kp F &kp L &kp C &kp W               &kp Q &kp U &kp O &kp Y &kp K
              &kp BSPC &kp LSHIFT &kp T   &kp SPACE &kp LSHIFT &kp ENTER
