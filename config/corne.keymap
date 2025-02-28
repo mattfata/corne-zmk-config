@@ -26,12 +26,12 @@
 
         HandsDownGold {
             bindings = <
-   &kp j &kp g &kp m &kp p &kp v               &kp SQT &kp DOT &kp COMMA &kp SEMI &kp COLON
-   &kp r &kp s &kp n &kp d &kp b               &kp z &kp a &kp e &kp i &kp h
-   &kp x &kp f &kp l &kp c &kp w               &kp q &kp u &kp o &kp y &kp k
-                  &kp BSPC &kp LSHIFT    &kp t &kp SPACE &kp LSHIFT &kp ENTER
+   &kp J &kp G &kp M &kp P &kp V               &kp SQT &kp DOT &kp COMMA &kp SEMI &kp COLON
+   &kp R &kp S &kp N &kp D &kp B               &kp Z &kp A &kp E &kp I &kp H
+   &kp X &kp F &kp L &kp C &kp W               &kp Q &kp U &kp O &kp Y &kp K
+             &kp BSPC &kp LSHIFT &kp T   &kp SPACE &kp LSHIFT &kp ENTER
             >;
-           layer-id = <b>
+            layer-id = <LAYER_HandsDownGold>;
         };
 
                 lower_layer {
