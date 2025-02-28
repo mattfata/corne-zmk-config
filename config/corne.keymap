@@ -31,7 +31,6 @@
    &kp X &kp F &kp L &kp C &kp W               &kp Q &kp U &kp O &kp Y &kp K
              &kp BSPC &kp LSHIFT &kp T   &kp SPACE &kp LSHIFT &kp ENTER
             >;
-            layer-id = <LAYER_HandsDownGold>;
         };
     };
 };
