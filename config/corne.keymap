@@ -127,6 +127,7 @@ keymap {
     compatible = "zmk,keymap";
 
     HandsDownGold {
+        display-name = "HDG";
         bindings = <
             &kp J &kp G &kp M &kp P &kp V               &kp SEMI &kp DOT &kp COMMA &kp MINUS &kp SQT
             &kp R &kp S &kp N &kp D &kp B               &kp Z &kp A &kp E &kp I &kp H
@@ -136,6 +137,7 @@ keymap {
     };
 
     Sys {
+        display-name = "Sys";
         bindings = <
             &none &none &none &none &none               &none &none &none &none &none
             &bt3 &bt2 &bt1 &bt0 &out OUT_TOG            &none &none &none &none &bt BT_CLR
