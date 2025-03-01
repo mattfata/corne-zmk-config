@@ -114,12 +114,12 @@ combos {
 
     to_hdg {
         key-positions = <20 21>;
-        bindings = <&to LAYER_HandsDownGold>
+        bindings = <&to LAYER_HandsDownGold>;
     };
 
     to_sys {
         key-positions = <20 22>;
-        bindings = <&tog LAYER_Sys>
+        bindings = <&tog LAYER_Sys>;
     };
 };
 
@@ -139,7 +139,7 @@ keymap {
         bindings = <
             &none &none &none &none &none               &none &none &none &none &none
             &bt3 &bt2 &bt1 &bt0 &out OUT_TOG            &none &none &none &none &bt BT_CLR
-            &none &none &none &none &none               &none &none &none &none &none
+            &bootloader &none &none &none &none         &none &none &none &none &bootloader
                             &none &none &none       &none &none &none f
         >;
     };
