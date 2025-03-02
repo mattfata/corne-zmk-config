@@ -25,6 +25,11 @@
     bindings = <&bt BT_SEL btnum>, <&bt BT_DISC btnum>; \
 }
 
+&lt {
+    tapping-term-ms = <200>;
+    quick-tap-ms = <200>;
+};
+
 / {
 chosen {
     zmk,physical-layout = &foostan_corne_5col_layout;
@@ -163,11 +168,11 @@ keymap {
     };
 
     HdgAdaptiveAfterA {
-		display-name = "HDG-D";
+		display-name = "HDG-A";
 		bindings = <
 &trans &trans &trans &trans &trans                          &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans                          &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans	                    	&trans &trans &trans &trans &kp U
+&trans &trans &trans &trans &trans                          &trans &trans &trans &trans &kp U
+&trans &trans &trans &trans &trans	                    &trans &trans &trans &trans &trans
               &trans &trans &trans		                    &trans &trans &trans
         >;
     };
