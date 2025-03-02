@@ -1,9 +1,5 @@
 /*
  * TODD:
- * - Add character layers
- *   - sym
- *   - nav
- *   - mod
  * - Add adaptive layers
  */
 
@@ -20,10 +16,10 @@
 //#define LAYER_HdgAdaptiveAfterD 4
 //#define LAYER_HdgAdaptiveAfterA 5
 #define LAYER_Num 1
-#define LAYER_Sym 1
-#define LAYER_Nav 1
-#define LAYER_Mod 1
-#define LAYER_Sys 2
+#define LAYER_Sym 2
+#define LAYER_Nav 3
+#define LAYER_Mod 4
+#define LAYER_Sys 5
 
 #define BT_TAP_DANCE(name, btnum) name: name { \
     compatible = "zmk,behavior-tap-dance"; \
@@ -58,15 +54,7 @@ behaviors {
     BT_TAP_DANCE(bt2, 2);
     BT_TAP_DANCE(bt3, 3);
 
-    lt: layer_or_tap {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick-tap-ms = <200>;
-        bindings = <&mo>, <&kp>; 
-    };
-
-    ms: mod_layer_or_shift {
+    modshift: mod_layer_or_shift {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <0>;
         tapping-term-ms = <200>;
@@ -76,7 +64,7 @@ behaviors {
 };
 
 macros {
-    tmux_prefixed: tmux_prefixed {
+    tmux: tmux {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&macro_tap>
@@ -144,20 +132,50 @@ keymap {
     HandsDownGold {
         display-name = "HDG";
         bindings = <
-            &kp J &kp G &kp M &kp P &kp V               &kp SEMI &kp DOT &kp COMMA &kp MINUS &kp SQT
-            &kp R &kp S &kp N &kp D &kp B               &kp Z &kp A &kp E &kp I &kp H
-            &kp X &kp F &kp L &kp C &kp W               &kp Q &kp U &kp O &kp Y &kp K
-            &lt LAYER_Num BSPC &ms &lt LAYER_Nav T      &lt LAYER_Sym SPACE &ms &kp ENTER
+&kp J &kp G &kp M &kp P &kp V               &kp SEMI &kp DOT &kp COMMA &kp MINUS &kp SQT
+&kp R &kp S &kp N &kp D &kp B               &kp Z &kp A &kp E &kp I &kp H
+&kp X &kp F &kp L &kp C &kp W               &kp Q &kp U &kp O &kp Y &kp K
+&lt LAYER_Num BSPC &modshift &lt LAYER_Nav T      &lt LAYER_Sym SPACE &modshift &kp ENTER
         >;
     };
 
     Num {
         display-name = "Num";
         bindings = <
-            &kp F11 &kp F12 &kp PSCRN &none &none       &kp F20 &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &none
-            &kp N1 &kp N2 &kp N3 &kp N4 &kp N5          &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
-            &kp F1 &kp F2 &kp F3 &kp F4 &kp F5          &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
+&kp F11 &kp F12 &kp PSCRN &none &none       &kp F20 &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &none
+&kp N1 &kp N2 &kp N3 &kp N4 &kp N5          &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
+&kp F1 &kp F2 &kp F3 &kp F4 &kp F5          &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
+                &trans &trans &trans      &trans &trans &trans 
+        >;
+    };
+
+    Sym {
+        display-name = "Sym";
+        bindings = <
+&kp TILDE &kp CARET &kp DLLR  &kp AMPS &kp HASH        &kp COLON &kp DOT  &kp STAR   &kp FSLH  &kp BSLH
+&kp LPAR  &kp EQUAL &kp UNDER &kp RPAR &kp GRAVE       &none     &kp LBRC &kp LBKT   &kp RBKT  &kp RBRC
+&kp LT    &kp PIPE  &kp MINUS &kp GT   &none           &kp PLUS  &kp QMARK  &kp EXCL &kp AT    &kp PRCNT
                             &trans &trans &trans      &trans &trans &trans 
+            >;
+        };
+
+    Nav {
+        display-name = "Nav";
+        bindings = <
+&tmux LBKT  &kp LC(Y)     &kp LC(Z) &kp LC(A) &kp LC(X)           &kp LC(X)  &kp E    &kp LC(Z) &kp LC(Y) &none
+&tmux Z     &tmux LS(SQT) &tmux C   &tmux L   &kp LC(C)           &kp LC(C)  &kp LEFT &kp UP    &kp DOWN  &kp RIGHT
+&kp M       &kp K         &kp J     &kp X     &kp LC(V)           &kp LC(V)  &kp HOME &kp PG_UP &kp PG_DN &kp END
+                                        &none  &none &none      &none &none &none
+            >;
+        };
+
+    Mod {
+        display-name = "Mod";    
+        bindings = <
+&none    &sk RALT  &kp CAPS &caps_word &none              &none   &caps_word &kp CAPS  &sk RALT &none
+&sk LGUI &sk LALT &sk LCTRL &sk LSHFT  &kp TAB            &kp TAB &sk RSHFT  &sk RCTRL &sk LALT &sk RGUI
+&kp INS  &kp DEL  &kp BSPC  &kp RET    &kp ESC            &kp ESC &kp RET    &kp BSPC  &kp DEL  &kp INS
+&none   &none   &none   &none   &none   &none
         >;
     };
 
