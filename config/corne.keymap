@@ -1,7 +1,6 @@
 /*
  * TODD:
  * - Add character layers
- *   - num
  *   - sym
  *   - nav
  *   - mod
@@ -20,13 +19,13 @@
 //#define LAYER_HdgAdaptiveAfterB 3
 //#define LAYER_HdgAdaptiveAfterD 4
 //#define LAYER_HdgAdaptiveAfterA 5
-//#define LAYER_Num 6
-//#define LAYER_Sym 7
-//#define LAYER_Nav 8
-//#define LAYER_Mod 9
-#define LAYER_Sys 1
+#define LAYER_Num 1
+#define LAYER_Sym 1
+#define LAYER_Nav 1
+#define LAYER_Mod 1
+#define LAYER_Sys 2
 
-#define BT_HOLD_TAP(name, btnum) name: name { \
+#define BT_TAP_DANCE(name, btnum) name: name { \
     compatible = "zmk,behavior-tap-dance"; \
     #binding-cells = <0>; \
     tapping-term-ms = <200>; \
@@ -54,10 +53,26 @@ behaviors {
         >;
     };
 
-    BT_HOLD_TAP(bt0, 0);
-    BT_HOLD_TAP(bt1, 1);
-    BT_HOLD_TAP(bt2, 2);
-    BT_HOLD_TAP(bt3, 3);
+    BT_TAP_DANCE(bt0, 0);
+    BT_TAP_DANCE(bt1, 1);
+    BT_TAP_DANCE(bt2, 2);
+    BT_TAP_DANCE(bt3, 3);
+
+    lt: layer_or_tap {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <200>;
+        bindings = <&mo>, <&kp>; 
+    };
+
+    ms: mod_layer_or_shift {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <200>;
+        bindings = <&mo LAYER_Mod>, <&sk LSHIFT>;
+    };
 };
 
 macros {
@@ -132,7 +147,17 @@ keymap {
             &kp J &kp G &kp M &kp P &kp V               &kp SEMI &kp DOT &kp COMMA &kp MINUS &kp SQT
             &kp R &kp S &kp N &kp D &kp B               &kp Z &kp A &kp E &kp I &kp H
             &kp X &kp F &kp L &kp C &kp W               &kp Q &kp U &kp O &kp Y &kp K
-                        &kp BSPC &kp LSHIFT &kp T  &kp SPACE &kp LSHIFT &kp ENTER
+            &lt LAYER_Num BSPC &ms &lt LAYER_Nav T      &lt LAYER_Sym SPACE &ms &kp ENTER
+        >;
+    };
+
+    Num {
+        display-name = "Num";
+        bindings = <
+            &kp F11 &kp F12 &kp PSCRN &none &none       &kp F20 &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &none
+            &kp N1 &kp N2 &kp N3 &kp N4 &kp N5          &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
+            &kp F1 &kp F2 &kp F3 &kp F4 &kp F5          &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
+                            &trans &trans &trans      &trans &trans &trans 
         >;
     };
 
