@@ -132,8 +132,8 @@ keymap {
 		bindings = <
 &trans &trans &kp L  &trans &trans      &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans		&trans &trans &trans &trans &trans
-              &trans &trans &trans		&trans &trans &trans
+&trans &trans &trans &trans &trans	&trans &trans &trans &trans &trans
+              &trans &trans &trans	&trans &trans &trans
         >;
     };
 
@@ -142,8 +142,8 @@ keymap {
 		bindings = <
 &trans &trans &kp L  &trans &replacement_adaptive L V       &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans                          &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans	                    	&trans &trans &trans &trans &trans
-              &trans &trans &trans		                    &trans &trans &trans
+&trans &trans &trans &trans &trans	                    &trans &trans &trans &trans &trans
+              &trans &trans &trans		            &trans &trans &trans
         >;
     };
 
@@ -152,8 +152,8 @@ keymap {
 		bindings = <
 &trans &trans &trans &trans &trans                          &trans &trans &trans &trans &trans
 &trans &trans &trans &kp L  &trans                          &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans	                    	&trans &trans &trans &trans &trans
-              &trans &trans &trans	                    	&trans &trans &trans
+&trans &trans &trans &trans &trans	                    &trans &trans &trans &trans &trans
+              &trans &trans &trans	                    &trans &trans &trans
         >;
     };
 
@@ -162,8 +162,8 @@ keymap {
 		bindings = <
 &trans &trans &trans &trans &trans                          &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &replacement_adaptive L B       &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans	                    	&trans &trans &trans &trans &trans
-              &trans &trans &trans		                    &trans &trans &trans
+&trans &trans &trans &trans &trans	                    &trans &trans &trans &trans &trans
+              &trans &trans &trans		            &trans &trans &trans
         >;
     };
 
@@ -173,7 +173,7 @@ keymap {
 &trans &trans &trans &trans &trans                          &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans                          &trans &trans &trans &trans &kp U
 &trans &trans &trans &trans &trans	                    &trans &trans &trans &trans &trans
-              &trans &trans &trans		                    &trans &trans &trans
+              &trans &trans &trans		            &trans &trans &trans
         >;
     };
 
@@ -203,7 +203,7 @@ keymap {
 &tmux LBKT  &kp LC(Y)     &kp LC(Z) &kp LC(A) &kp LC(X)           &kp LC(X)  &kp E    &kp LC(Z) &kp LC(Y) &none
 &tmux Z     &tmux LS(SQT) &tmux C   &tmux L   &kp LC(C)           &kp LC(C)  &kp LEFT &kp UP    &kp DOWN  &kp RIGHT
 &kp M       &kp K         &kp J     &kp X     &kp LC(V)           &kp LC(V)  &kp HOME &kp PG_UP &kp PG_DN &kp END
-                          &none     &none     &tog LAYER_Nav      &none      &none    &none
+                          &trans    &trans    &tog LAYER_Nav      &trans      &trans    &trans
             >;
         };
 
