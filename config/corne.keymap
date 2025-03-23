@@ -120,10 +120,10 @@ keymap {
     HandsDownGold {
         display-name = "HDG";
         bindings = <
-&kp J ADAPTIVE_LEADER(G) &kp M              ADAPTIVE_LEADER(P)          &kp V                       &kp SEMI              &kp DOT              &kp COMMA &kp MINUS &kp SQT
-&kp R &kp S              &kp N              ADAPTIVE_LEADER(D)          ADAPTIVE_LEADER(B)          &kp Z                 ADAPTIVE_LEADER(A)   &kp E     &kp I     &kp H
-&kp X &kp F              &kp L              &kp C                       &kp W                       &kp Q                 &kp U                &kp O     &kp Y     &kp K
-                         &mo_sk LAYER_Mod   &lt LAYER_Num BSPC LSHIFT   &lt LAYER_Nav T             &lt LAYER_Sym SPACE   &kp ENTER            &mo_sk LAYER_Mod LSHIFT
+&kp J ADAPTIVE_LEADER(G) &kp M                   ADAPTIVE_LEADER(P) &kp V                       &kp SEMI              &kp DOT              &kp COMMA &kp MINUS &kp SQT
+&kp R &kp S              &kp N                   ADAPTIVE_LEADER(D) ADAPTIVE_LEADER(B)          &kp Z                 ADAPTIVE_LEADER(A)   &kp E     &kp I     &kp H
+&kp X &kp F              &kp L                   &kp C              &kp W                       &kp Q                 &kp U                &kp O     &kp Y     &kp K
+                         &mo_sk LAYER_Mod LSHIFT &lt LAYER_Num BSPC &lt LAYER_Nav T             &lt LAYER_Sym SPACE   &kp ENTER            &mo_sk LAYER_Mod LSHIFT
         >;
     };
 
