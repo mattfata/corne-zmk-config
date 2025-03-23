@@ -120,10 +120,10 @@ keymap {
     HandsDownGold {
         display-name = "HDG";
         bindings = <
-&kp J ADAPTIVE_LEADER(G) &kp M              ADAPTIVE_LEADER(P)      &kp V                       &kp SEMI            &kp DOT                 &kp COMMA &kp MINUS &kp SQT
-&kp R &kp S              &kp N              ADAPTIVE_LEADER(D)      ADAPTIVE_LEADER(B)          &kp Z               ADAPTIVE_LEADER(A)      &kp E     &kp I     &kp H
-&kp X &kp F              &kp L              &kp C                   &kp W                       &kp Q               &kp U                   &kp O     &kp Y     &kp K
-                         &lt LAYER_Num BSPC &mo_sk LAYER_Mod LSHIFT &lt LAYER_Nav T             &lt LAYER_Sym SPACE &mo_sk LAYER_Mod LSHIFT &kp ENTER
+&kp J ADAPTIVE_LEADER(G) &kp M              ADAPTIVE_LEADER(P)          &kp V                       &kp SEMI              &kp DOT              &kp COMMA &kp MINUS &kp SQT
+&kp R &kp S              &kp N              ADAPTIVE_LEADER(D)          ADAPTIVE_LEADER(B)          &kp Z                 ADAPTIVE_LEADER(A)   &kp E     &kp I     &kp H
+&kp X &kp F              &kp L              &kp C                       &kp W                       &kp Q                 &kp U                &kp O     &kp Y     &kp K
+                         &mo_sk LAYER_Mod   &lt LAYER_Num BSPC LSHIFT   &lt LAYER_Nav T             &lt LAYER_Sym SPACE   &kp ENTER            &mo_sk LAYER_Mod LSHIFT
         >;
     };
 
@@ -180,19 +180,19 @@ keymap {
     Num {
         display-name = "Num";
         bindings = <
-&kp F11 &kp F12 &kp PSCRN      &none &none            &kp F20 &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &none
-&kp N1  &kp N2  &kp N3         &kp N4 &kp N5          &kp N6  &kp N7 &kp N8 &kp N9 &kp N0
-&kp F1  &kp F2  &kp F3         &kp F4 &kp F5          &kp F6  &kp F7 &kp F8 &kp F9 &kp F10
-                &tog LAYER_Num &trans &trans          &trans  &trans &trans 
+&kp F11 &kp F12 &kp PSCRN &none &none                      &kp F20 &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &none
+&kp N1  &kp N2  &kp N3    &kp N4           &kp N5          &kp N6  &kp N7     &kp N8       &kp N9       &kp N0
+&kp F1  &kp F2  &kp F3    &kp F4           &kp F5          &kp F6  &kp F7     &kp F8       &kp F9       &kp F10
+                &trans    &tog LAYER_Num   &trans          &trans  &trans     &trans 
         >;
     };
 
     Sym {
         display-name = "Sym";
         bindings = <
-&kp TILDE &kp CARET &kp DLLR  &kp AMPS &kp HASH        &kp COLON      &kp DOT  &kp STAR   &kp FSLH  &kp BSLH
-&kp LPAR  &kp EQUAL &kp UNDER &kp RPAR &kp GRAVE       &none          &kp LBRC &kp LBKT   &kp RBKT  &kp RBRC
-&kp LT    &kp PIPE  &kp MINUS &kp GT   &none           &kp PLUS       &kp QMARK  &kp EXCL &kp AT    &kp PRCNT
+&kp TILDE &kp CARET &kp DLLR  &kp AMPS &kp HASH        &kp COLON      &kp DOT    &kp STAR &kp FSLH &kp BSLH
+&kp LPAR  &kp EQUAL &kp UNDER &kp RPAR &kp GRAVE       &none          &kp LBRC   &kp LBKT &kp RBKT &kp RBRC
+&kp LT    &kp PIPE  &kp MINUS &kp GT   &none           &kp PLUS       &kp QMARK  &kp EXCL &kp AT   &kp PRCNT
                     &trans    &trans   &trans          &tog LAYER_Sym &trans &trans 
             >;
         };
@@ -203,17 +203,17 @@ keymap {
 &tmux LBKT  &kp LC(Y)     &kp LC(Z) &kp LC(A) &kp LC(X)           &kp LC(X)  &kp E    &kp LC(Z) &kp LC(Y) &none
 &tmux Z     &tmux LS(SQT) &tmux C   &tmux L   &kp LC(C)           &kp LC(C)  &kp LEFT &kp UP    &kp DOWN  &kp RIGHT
 &kp M       &kp K         &kp J     &kp X     &kp LC(V)           &kp LC(V)  &kp HOME &kp PG_UP &kp PG_DN &kp END
-                          &trans    &trans    &tog LAYER_Nav      &trans      &trans    &trans
+                          &trans    &trans    &tog LAYER_Nav      &trans     &trans   &trans
             >;
         };
 
     Mod {
         display-name = "Mod";    
         bindings = <
-&none    &sk RALT  &kp CAPS      &caps_word &none                  &none          &caps_word    &kp CAPS  &sk RALT &none
-&sk LGUI &sk LALT &sk LCTRL      &sk LSHFT  &kp TAB                &kp TAB        &sk RSHFT     &sk RCTRL &sk LALT &sk RGUI
-&kp INS  &kp DEL  &kp BSPC       &kp RET    &kp ESC                &kp ESC        &kp RET       &kp BSPC  &kp DEL  &kp INS
-                  &tog LAYER_Num &mo LAYER_Sys &tog LAYER_Nav      &tog LAYER_Sym &mo LAYER_Sys &trans 
+&none    &sk RALT  &kp CAPS      &caps_word &none                  &none          &caps_word  &kp CAPS  &sk RALT &none
+&sk LGUI &sk LALT &sk LCTRL      &sk LSHFT  &kp TAB                &kp TAB        &sk RSHFT   &sk RCTRL &sk LALT &sk RGUI
+&kp INS  &kp DEL  &kp BSPC       &kp RET    &kp ESC                &kp ESC        &kp RET     &kp BSPC  &kp DEL  &kp INS
+                  &mo LAYER_Sys &tog LAYER_Num &tog LAYER_Nav      &tog LAYER_Sym &trans      &mo LAYER_Sys
         >;
     };
 
